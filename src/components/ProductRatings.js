@@ -4,6 +4,7 @@ import { useContext, useState } from 'react';
 
 import { DataContext } from './DataContext';
 import { Button } from './UI/Button';
+import { Stars } from './UI/Stars';
 import { CustomerReviews } from './CustomerReviews';
 
 export const ProductRatings = (props) => {
@@ -12,21 +13,17 @@ export const ProductRatings = (props) => {
   return (
     <section className="ratings">
       <div className="ratings__head">
-        <h1 className="product-title">{props.product}</h1>
+        <h1 className="product-title">{props.name}</h1>
         <div className="product-rating">
-          <p className="total-rating">{props.overallRating}</p>
-          <div
-            className="stars"
-            style={{ '--rating': props.overallRating }}
-            aria-label={`Rating of this product is ${props.overallRating} out of 5.`}
-          ></div>
+          <p className="total-rating">{props.rating}</p>
+          <Stars rating={props.rating} />
           <Button value="Add Rating" />
         </div>
       </div>
       <hr />
 
       {reviews
-        .filter((review) => props.product === review.product.name)
+        .filter((review) => props.name === review.product.name)
         .map((review) => (
           <CustomerReviews
             key={review.id}

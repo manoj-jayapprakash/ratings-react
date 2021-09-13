@@ -1,6 +1,6 @@
 import './App.css';
 
-import { AllProductRatings } from './AllProductRatings';
+import { AllProductRatings } from './components/AllProductRatings';
 
 import { DataProvider } from './components/DataContext';
 

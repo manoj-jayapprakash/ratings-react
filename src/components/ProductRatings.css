@@ -1,0 +1,31 @@
+.ratings {
+  width: min(100%, 40rem);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  border-radius: var(--rounded);
+  margin: 1rem 0;
+}
+
+.ratings__head,
+.ratings__body {
+  margin: 1rem 0;
+}
+
+.product-title {
+  font-size: var(--fs-700);
+}
+
+.product-rating {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.total-rating {
+  font-size: var(--fs-500);
+}
+
+.add-review {
+  margin-left: auto;
+}
