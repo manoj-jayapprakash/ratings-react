@@ -1,0 +1,10 @@
+button {
+  border: 1px solid hsla(0, 0%, 80%, 1);
+  outline: none;
+  padding: 0.5rem;
+  border-radius: var(--rounded);
+  font-size: var(--fs-300);
+  font-weight: 700;
+  background-color: white;
+  color: hsl(48, 2%, 46%);
+}
