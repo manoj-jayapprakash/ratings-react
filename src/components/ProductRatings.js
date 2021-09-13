@@ -5,10 +5,17 @@ import { useContext, useState } from 'react';
 import { DataContext } from './DataContext';
 import { Button } from './UI/Button';
 import { Stars } from './UI/Stars';
+import { AddReviewModal } from './AddReviewModal';
 import { CustomerReviews } from './CustomerReviews';
 
 export const ProductRatings = (props) => {
   const [, , reviews] = useContext(DataContext);
+
+  const [viewModal, setViewModal] = useState(false);
+
+  const openModal = () => {
+    setViewModal(!viewModal);
+  };
 
   return (
     <section className="ratings">
@@ -17,7 +24,16 @@ export const ProductRatings = (props) => {
         <div className="product-rating">
           <p className="total-rating">{props.rating}</p>
           <Stars rating={props.rating} />
-          <Button value="Add Rating" />
+          <Button
+            value="Add Rating"
+            className="add-review"
+            onClick={openModal}
+          />
+          {viewModal ? (
+            <AddReviewModal showModal={viewModal} product={props.name} />
+          ) : (
+            ''
+          )}
         </div>
       </div>
       <hr />
