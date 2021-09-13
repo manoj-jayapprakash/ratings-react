@@ -1,0 +1,36 @@
+.review-title {
+  font-size: var(--fs-500);
+}
+
+.review-item {
+  margin: 0.5rem 0;
+  color: hsla(0, 0%, 52%, 1);
+}
+
+.review-item__stars {
+  align-self: flex-start;
+}
+
+.review-item-rating {
+  color: hsl(0, 0%, 0%);
+  font-weight: 700;
+}
+
+.stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  font-size: var(--star-size);
+  line-height: 1;
+}
+
+.stars::before {
+  content: '★★★★★';
+  background: linear-gradient(
+    90deg,
+    var(--star-background) var(--percent),
+    var(--star-color) var(--percent)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

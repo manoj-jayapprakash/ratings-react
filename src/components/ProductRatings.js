@@ -21,16 +21,18 @@ export const ProductRatings = (props) => {
         </div>
       </div>
       <hr />
-
-      {reviews
-        .filter((review) => props.name === review.product.name)
-        .map((review) => (
-          <CustomerReviews
-            key={review.id}
-            stars={review.stars}
-            comments={review.comments}
-          />
-        ))}
+      <div className="ratings__body">
+        <h2 className="review-title">Reviews</h2>
+        {reviews
+          .filter((review) => props.name === review.product.name)
+          .map((review) => (
+            <CustomerReviews
+              key={review.id}
+              stars={review.stars}
+              comments={review.comments}
+            />
+          ))}
+      </div>
     </section>
   );
 };

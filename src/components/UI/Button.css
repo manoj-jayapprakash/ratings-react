@@ -8,3 +8,7 @@ button {
   background-color: white;
   color: hsl(48, 2%, 46%);
 }
+
+.add-review {
+  margin-left: auto;
+}
