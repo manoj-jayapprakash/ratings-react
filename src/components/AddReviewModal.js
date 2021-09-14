@@ -42,11 +42,14 @@ export const AddReviewModal = (props) => {
     };
 
     try {
-      const response = await fetch('http://localhost:1337/reviews', {
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify(customerReview),
-      });
+      const response = await fetch(
+        'https://mj-product-ratings.herokuapp.com/reviews',
+        {
+          method: 'POST',
+          headers: headers,
+          body: JSON.stringify(customerReview),
+        }
+      );
 
       if (response.ok) {
         setSubmitSuccess(true);
@@ -70,7 +73,10 @@ export const AddReviewModal = (props) => {
     ).length;
 
     //calculate the new overall rating after successful review
-    const newOverallRating = (totalStars + +stars) / (totalRating + 1);
+    const newOverallRating = (
+      (totalStars + +stars) /
+      (totalRating + 1)
+    ).toFixed(2);
 
     const updateProductRating = {
       ...reviewedProduct,
@@ -79,7 +85,7 @@ export const AddReviewModal = (props) => {
     //update the new rating in db
     try {
       const response = await fetch(
-        `http://localhost:1337/products/${reviewedProduct[0].id}`,
+        `https://mj-product-ratings.herokuapp.com/products/${reviewedProduct[0].id}`,
         {
           method: 'PUT',
           headers: headers,

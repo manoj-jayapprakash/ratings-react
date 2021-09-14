@@ -18,7 +18,9 @@ export const DataProvider = (props) => {
       // if (mounted)
       // {
       try {
-        const response = await fetch(`http://localhost:1337/products`);
+        const response = await fetch(
+          `https://mj-product-ratings.herokuapp.com/products`
+        );
         const data = await response.json();
 
         setProducts(data);
@@ -41,7 +43,9 @@ export const DataProvider = (props) => {
       setIsLoading(true);
       // if (mounted) {
       try {
-        const response = await fetch(`http://localhost:1337/reviews`);
+        const response = await fetch(
+          `https://mj-product-ratings.herokuapp.com/reviews`
+        );
         const data = await response.json();
         setReviews(data);
       } catch (e) {
