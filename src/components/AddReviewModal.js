@@ -6,7 +6,7 @@ import { Button } from './UI/Button';
 import { DataContext } from './DataContext';
 
 export const AddReviewModal = (props) => {
-  const [products, setProducts, reviews, setReviews, , , newData, setNewData] =
+  const [products, , reviews, setReviews, , , newData, setNewData] =
     useContext(DataContext);
   const [reviewComments, setReviewComments] = useState();
   const [stars, setStars] = useState(0);

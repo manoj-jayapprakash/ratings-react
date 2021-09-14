@@ -49,7 +49,7 @@
 
 .modal-review-textarea {
   width: 100%;
-  /* border: none; */
+  border: none;
   outline: none;
   resize: none;
   min-height: 15vh;

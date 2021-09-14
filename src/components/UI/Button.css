@@ -9,6 +9,9 @@ button {
   color: hsl(48, 2%, 46%);
 }
 
+button:hover {
+  cursor: pointer;
+}
 .add-review {
   margin-left: auto;
 }
