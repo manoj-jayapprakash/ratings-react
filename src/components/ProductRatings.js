@@ -30,7 +30,11 @@ export const ProductRatings = (props) => {
             onClick={openModal}
           />
           {viewModal ? (
-            <AddReviewModal showModal={viewModal} product={props.name} />
+            <AddReviewModal
+              showModal={viewModal}
+              product={props.name}
+              modalState={setViewModal}
+            />
           ) : (
             ''
           )}

@@ -8,7 +8,7 @@ export const CustomerReviews = (props) => {
       <div className="review-item">
         <Stars rating={props.stars} />
         <p className="rating-comment">
-          <span class="review-item-rating">{props.stars}</span>,{' '}
+          <span className="review-item-rating">{props.stars}</span>,{' '}
           {props.comments}
         </p>
       </div>

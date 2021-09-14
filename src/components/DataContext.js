@@ -4,31 +4,70 @@ export const DataContext = createContext();
 
 export const DataProvider = (props) => {
   const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`http://localhost:1337/products`);
-      const data = await response.json();
-
-      setProducts(data);
-    };
-
-    fetchData();
-  }, [setProducts]);
-
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [newData, setNewData] = useState(false);
+  //Get product details from db
   useEffect(() => {
+    // let mounted = true;
+
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:1337/reviews`);
-      const data = await response.json();
+      setIsError(false);
+      setIsLoading(true);
+      // if (mounted)
+      // {
+      try {
+        const response = await fetch(`http://localhost:1337/products`);
+        const data = await response.json();
 
-      setReviews(data);
+        setProducts(data);
+      } catch (e) {
+        setIsError(true);
+      }
+      setIsLoading(false);
+      // }
     };
-
     fetchData();
-  }, [setReviews]);
+
+    //return () => (mounted = false);
+  }, [newData]);
+
+  //Get review details from db
+  useEffect(() => {
+    // let mounted = true;
+    const fetchData = async () => {
+      setIsError(false);
+      setIsLoading(true);
+      // if (mounted) {
+      try {
+        const response = await fetch(`http://localhost:1337/reviews`);
+        const data = await response.json();
+        setReviews(data);
+      } catch (e) {
+        setIsError(true);
+      }
+      setIsLoading(false);
+      // }
+    };
+    fetchData();
+
+    // return () => (mounted = false);
+  }, [newData]);
 
   return (
-    <DataContext.Provider value={[products, setProducts, reviews, setReviews]}>
+    <DataContext.Provider
+      value={[
+        products,
+        setProducts,
+        reviews,
+        setReviews,
+        isLoading,
+        isError,
+        newData,
+        setNewData,
+      ]}
+    >
       {props.children}
     </DataContext.Provider>
   );
