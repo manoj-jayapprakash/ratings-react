@@ -6,7 +6,7 @@ button {
   font-size: var(--fs-300);
   font-weight: 700;
   background-color: white;
-  color: hsl(48, 2%, 46%);
+  color: hsl(0, 0%, 19%);
 }
 
 button:hover {

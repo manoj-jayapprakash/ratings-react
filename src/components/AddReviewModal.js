@@ -85,7 +85,7 @@ export const AddReviewModal = (props) => {
     //update the new rating in db
     try {
       const response = await fetch(
-        `https://mj-product-ratings.herokuapp.com/products/${reviewedProduct[0].id}`,
+        `https://mj-product-ratings.herokuapp.com/produucts/${reviewedProduct[0].id}`,
         {
           method: 'PUT',
           headers: headers,

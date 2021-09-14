@@ -19,7 +19,7 @@ export const DataProvider = (props) => {
       // {
       try {
         const response = await fetch(
-          `https://mj-product-ratings.herokuapp.com/products`
+          `https://mj-product-ratings.herokuapp.com/produucts`
         );
         const data = await response.json();
 

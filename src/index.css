@@ -1,5 +1,4 @@
 :root {
-  --ff-primary: 'Poppins', sans-serif;
   --fs-300: 0.75rem;
   --fs-400: 1rem;
   --fs-500: 1.25rem;
@@ -19,7 +18,7 @@
 body {
   display: grid;
   place-items: center;
-  font-family: var(--ff-primary);
+
   font-size: var(--fs-400);
   padding: 1rem;
 }
